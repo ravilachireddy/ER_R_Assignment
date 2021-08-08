@@ -31,7 +31,7 @@
 
 5. Scoring method: A score is assigned to determine the quality of matches. A score of 4 indicates all 4 records matches across the datasets and a score of 0 suggests Zero matches (distinct record). 
 
-6. A thresold of score above 2 is chosen to filter the final matches, which are 2056 matches (with score of 2.5 or above). Based on the business requirements/ the type of problem, a suitable of score thresold could be selected. For this ER problem, a score of 2.5 or above are selected to identify the best matches across the two datasets. 
+6. A thresold of score above 2 is chosen to filter the final matches, which are 2056 matches (with score of 2.5 or above). Based on the business requirements/ the type of problem, a suitable score thresold could be selected. For this ER problem, a score of 2.5 or above is selected to identify the best matches across the two datasets. 
 
 7. Final Mapping: Based on the thresold score of 2.5 or above, 2056 record matches are mapped. The results are merged and a new column 'Match_ID' based on Scholar_match and DBLP_Match is created. 
 
@@ -40,11 +40,11 @@
 
 ### Constraints and Assumptions
 
-1. Instead of Full indexing, I have used Sorted neighborhood indexing (on title). This is because full indexing of the current datasets was resulting in 16.5 million record pairs. The training of those record pairs will be computationally expensive and time-consuming. The use of title column and sorted neighborhood was appropraite in the present context as it lead to better accuracy within my resources. 
+1. Instead of Full indexing on entire datasets, I have used Sorted neighborhood indexing (on title). This is because full indexing of the current datasets was resulting in 16.5 million record pairs. The training of those record pairs will be computationally expensive and time-consuming. The use of title column and sorted neighborhood was appropraite in the present context as it lead to better accuracy within my resources. 
 
 2. Classification algorithms could be used for classifying into matches, non-matches and possibe matches if there is training data or if we could use this data as training data for future models. 
 
-3. While, the current model address the issue of de-duplication of records it may have some matches with thresold score of 2.5. To address this issue, we could de-duplicate each dataset initially separately using record linkage toolkit and then we could build our Entity resolution model. However, due to computionally limitations and time constraints I have directly employed record linkage on both datasets (which addresses the de-duplication to great extent). 
+3. While, the current model address the issue of de-duplication of records it may have some matches with thresold score of 2.5. To address this issue, we could de-duplicate each dataset initially separately and then we could build our Entity resolution model. However, due to computational limitations and time constraints I have directly employed record linkage on both datasets which also addresses the de-duplication problem to great extent.
 
 
 ### Libraries Used 
