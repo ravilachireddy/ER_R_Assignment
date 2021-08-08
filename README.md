@@ -1,2 +1,1 @@
-# ER_R_Assignment
-Entity Resolution
+# Entity_Resolution_Assignment
